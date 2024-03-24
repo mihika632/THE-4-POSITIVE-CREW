@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Group Inventory</title>
+  </head>
+  <body>
+    <div class="bg-white overflow-auto">
+      <table class="min-w-full bg-white">
+        <thead class="bg-gray-800 text-white">
+          <tr>
+            <th
+              class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm"
+            >
+              Blood Group Name
+            </th>
+            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">
+              Capacity
+            </th>
+          </tr>
+        </thead>
+        <tbody id="bloodGroupTableBody" class="text-gray-700">
+          <!-- Table body will be dynamically populated -->
+        </tbody>
+      </table>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        get,
+      } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBh89RtEGcYz3INTFW_kzScAM76aodLtA8",
+        authDomain: "bloodshare-94c37.firebaseapp.com",
+        databaseURL: "https://bloodshare-94c37-default-rtdb.firebaseio.com",
+        projectId: "bloodshare-94c37",
+        storageBucket: "bloodshare-94c37.appspot.com",
+        messagingSenderId: "282338631910",
+        appId: "1:282338631910:web:b797c8905c60870b7d5b27",
+        measurementId: "G-CCW4K9CET6",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase();
+
+      // Reference to the Blood Group Inventory
+      const bloodGroupRef = ref(db, "BloodGroupInventory");
+
+      // Fetch data from Firebase
+      get(bloodGroupRef)
+        .then((snapshot) => {
+          const bloodGroups = snapshot.val();
+
+          // Get table body element
+          const tbody = document.getElementById("bloodGroupTableBody");
+
+          // Clear existing table rows
+          tbody.innerHTML = "";
+
+          // Loop through blood groups and populate table rows
+          // Loop through blood groups and populate table rows
+          for (const bloodGroupKey in bloodGroups) {
+            if (Object.hasOwnProperty.call(bloodGroups, bloodGroupKey)) {
+              const bloodGroup = bloodGroups[bloodGroupKey];
+
+              // Create a new row for the blood group
+              // Create a new row
+              const row = document.createElement("tr");
+
+              // Populate row with data
+              row.innerHTML = `
+  <td>${Object.keys(bloodGroups.name)}</td>
+  <td>${JSON.stringify(Object.values(bloodGroups))}</td>
+`;
+
+              // Append row to table body
+              tbody.appendChild(row);
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    </script>
+  </body>
+</html>

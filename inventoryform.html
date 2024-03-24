@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Group Counter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  
+  </div>
+  <body class="bg-white-500 min-h-screen flex items-center justify-center">
+   
+      </div>
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+        <h2 class="text-2xl font-semibold text-center mb-4">
+        Customise Blood Inventory
+      </h2>
+      <p class="text-gray-600 text-center mb-6">Enter Blood Group Counts</p>
+      <form id="blood-group-form">
+        <div class="mb-4">
+          <label
+            for="group-a-positive"
+            class="block text-gray-700 text-sm font-semibold mb-2"
+            >Blood Group A+ *</label
+          >
+          <input
+            type="number"
+            id="group-a-positive"
+            name="group-a-positive"
+            value="0"
+            min="0"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="group-a-negative"
+            class="block text-gray-700 text-sm font-semibold mb-2"
+            >Blood Group A- *</label
+          >
+          <input
+            type="number"
+            id="group-a-negative"
+            name="group-a-negative"
+            value="0"
+            min="0"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+            <label
+              for="group-a-positive"
+              class="block text-gray-700 text-sm font-semibold mb-2"
+              >Blood Group B+ *</label
+            >
+            <input
+              type="number"
+              id="group-b-positive"
+              name="group-b-positive"
+              value="0"
+              min="0"
+              class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="group-b-negative"
+              class="block text-gray-700 text-sm font-semibold mb-2"
+              >Blood Group B- *</label
+            >
+            <input
+              type="number"
+              id="group-b-negative"
+              name="group-b-negative"
+              value="0"
+              min="0"
+              class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="group-ab-positive"
+              class="block text-gray-700 text-sm font-semibold mb-2"
+              >Blood Group AB+ *</label
+            >
+            <input
+              type="number"
+              id="group-ab-positive"
+              name="group-ab-positive"
+              value="0"
+              min="0"
+              class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+              required
+            />
+          </div>
+               <div class="mb-4">
+          <label
+            for="group-ab-negative"
+            class="block text-gray-700 text-sm font-semibold mb-2"
+            >Blood Group AB- *</label
+          >
+          <input
+            type="number"
+            id="group-ab-negative"
+            name="group-ab-negative"
+            value="0"
+            min="0"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+            required
+          />
+        </div>
+         <div class="mb-4">
+          <label
+            for="group-o-positive"
+            class="block text-gray-700 text-sm font-semibold mb-2"
+            >Blood Group O+ *</label
+          >
+          <input
+            type="number"
+            id="group-o-positive"
+            name="group-o-positive"
+            value="0"
+            min="0"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+            required
+          />
+        </div>
+         <div class="mb-4">
+          <label
+            for="group-o-negative"
+            class="block text-gray-700 text-sm font-semibold mb-2"
+            >Blood Group O- *</label
+          >
+          <input
+            type="number"
+            id="group-o-negative"
+            name="group-o-negative"
+            value="0"
+            min="0"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+            required
+          />
+        </div>
+         <div class="mb-4">
+          <label
+            for="bombay-blood-group"
+            class="block text-gray-700 text-sm font-semibold mb-2"
+            >Bombay Blood Group (hh or Oh) *</label
+          >
+          <input
+            type="number"
+            id="bombay-blood-group"
+            name="bombay-blood-group"
+            value="0"
+            min="0"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-red-500"
+            required
+          />
+        
+        <button
+          type="submit"
+          class="w-full bg-red-700 text-white px-4 py-2 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+        >
+          Save
+        </button>
+      </form>
+      <p class="text-gray-600 text-xs text-center mt-4">
+        This data will be analysed and shown on homepage.
+      </p>
+    </div>
+    
+
+  
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+      import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+      import { getAuth } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBh89RtEGcYz3INTFW_kzScAM76aodLtA8",
+        authDomain: "bloodshare-94c37.firebaseapp.com",
+        databaseURL: "https://bloodshare-94c37-default-rtdb.firebaseio.com",
+        projectId: "bloodshare-94c37",
+        storageBucket: "bloodshare-94c37.appspot.com",
+        messagingSenderId: "282338631910",
+        appId: "1:282338631910:web:b797c8905c60870b7d5b27",
+        measurementId: "G-CCW4K9CET6",
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const auth = getAuth(app);
+    
+      // Reference to the blood group form
+      const bloodGroupForm = document.getElementById("blood-group-form");
+    
+      // Event listener for form submission
+      bloodGroupForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+    
+        // Get the current authenticated user
+        const user = auth.currentUser;
+    
+        // Get form values
+        const groupAPositive = document.getElementById("group-a-positive").value.trim();
+        const groupANegative = document.getElementById("group-a-negative").value.trim();
+        const groupBPositive = document.getElementById("group-b-positive").value.trim();
+        const groupBNegative = document.getElementById("group-b-negative").value.trim();
+        const groupABPositive = document.getElementById("group-ab-positive").value.trim();
+        const groupABNegative = document.getElementById("group-ab-negative").value.trim();
+        const groupOPositive = document.getElementById("group-o-positive").value.trim();
+        const groupONegative = document.getElementById("group-o-negative").value.trim();
+        const bombayBloodGroup = document.getElementById("bombay-blood-group").value.trim();
+    
+        // Check if all fields are filled
+        if (groupAPositive && groupANegative && groupBPositive && groupBNegative && groupABPositive && groupABNegative && groupOPositive && groupONegative && bombayBloodGroup) {
+          if (user) {
+            // Push data to Firebase with user's UID
+            push(ref(db, `BloodGroupInventory/${user.uid}`), {
+    "Group A+": parseInt(groupAPositive),
+    "Group A-": parseInt(groupANegative),
+    "Group B+": parseInt(groupBPositive),
+    "Group B-": parseInt(groupBNegative),
+    "Group AB+": parseInt(groupABPositive),
+    "Group AB-": parseInt(groupABNegative),
+    "Group O+": parseInt(groupOPositive),
+    "Group O-": parseInt(groupONegative),
+    "Bombay Blood Group": parseInt(bombayBloodGroup)
+})
+            .then(() => {
+              alert("Data stored successfully");
+              bloodGroupForm.reset(); // Reset form after successful submission
+            })
+            .catch((error) => {
+              alert("Unsuccessful, error: " + error.message);
+            });
+          } else {
+            alert("User not authenticated.");
+          }
+        } else {
+          alert("Please fill out all required fields");
+        }
+      });
+    </script>
+    
+
+    
+  </body>
+</html>

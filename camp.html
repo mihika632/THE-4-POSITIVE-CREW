@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Donation Camp Registration</title>
+
+    <!-- Include the Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <div
+      class="container mx-auto max-w-lg p-6 bg-white rounded-lg shadow-md mt-10"
+    >
+      <h2 class="text-2xl font-bold text-center text-red-600 mb-6">
+        Blood Donation Camp Registration
+      </h2>
+
+      <form id="registration-form">
+        <div class="mb-4">
+          <label for="organization_name" class="block font-bold mb-1"
+            >Organization Name:</label
+          >
+          <input
+            type="text"
+            id="organization_name"
+            name="organization_name"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="organizer_name" class="block font-bold mb-1"
+            >Organizer Name:</label
+          >
+          <input
+            type="text"
+            id="organizer_name"
+            name="organizer_name"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="organizer_mobile" class="block font-bold mb-1"
+            >Organizer Mobile No:</label
+          >
+          <input
+            type="text"
+            id="organizer_mobile"
+            name="organizer_mobile"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="organizer_email" class="block font-bold mb-1"
+            >Organizer Email Id:</label
+          >
+          <input
+            type="email"
+            id="organizer_email"
+            name="organizer_email"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="co_organizer_name" class="block font-bold mb-1"
+            >Co-Organizer Name:</label
+          >
+          <input
+            type="text"
+            id="co_organizer_name"
+            name="co_organizer_name"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="co_organizer_mobile" class="block font-bold mb-1"
+            >Co-Organizer Mobile:</label
+          >
+          <input
+            type="text"
+            id="co_organizer_mobile"
+            name="co_organizer_mobile"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="camp_name" class="block font-bold mb-1">Camp Name:</label>
+          <input
+            type="text"
+            id="camp_name"
+            name="camp_name"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="camp_address" class="block font-bold mb-1"
+            >Camp Address:</label
+          >
+          <input
+            type="text"
+            id="camp_address"
+            name="camp_address"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="blood_bank" class="block font-bold mb-1">State:</label>
+          <select
+            id="blood_bank"
+            name="blood_bank"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          >
+            <option value="">State</option>
+            <option value="Andaman and Nicobar Islands">
+              Andaman and Nicobar Islands
+            </option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Dadra and Nagar Haveli">
+              Dadra and Nagar Haveli
+            </option>
+            <option value="Daman and Diu">Daman and Diu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Ladakh">Ladakh</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="city_name" class="block font-bold mb-1">City Name:</label>
+          <select
+            id="city_name"
+            name="city_name"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          >
+            <option value="">Select City</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Surat">Surat</option>
+            <option value="Jaipur">Jaipur</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="camp_propose_date" class="block font-bold mb-1"
+            >Camp Propose Date:</label
+          >
+          <input
+            type="date"
+            id="camp_propose_date"
+            name="camp_propose_date"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <div class="flex justify-between">
+            <div>
+              <label for="start_time" class="block font-bold mb-1"
+                >Start Time (24HH:MM):</label
+              >
+              <input
+                type="time"
+                id="start_time"
+                name="start_time"
+                class="w-32 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+            <div>
+              <label for="end_time" class="block font-bold mb-1"
+                >End Time (24HH:MM):</label
+              >
+              <input
+                type="time"
+                id="end_time"
+                name="end_time"
+                class="w-32 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="latitude" class="block font-bold mb-1">Latitude:</label>
+          <input
+            type="text"
+            id="latitude"
+            name="latitude"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="longitude" class="block font-bold mb-1">Longitude:</label>
+          <input
+            type="text"
+            id="longitude"
+            name="longitude"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="estimated_participants" class="block font-bold mb-1"
+            >Estimated Participants:</label
+          >
+          <input
+            type="number"
+            id="estimated_participants"
+            name="estimated_participants"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="reference" class="block font-bold mb-1"
+            >Reference/Camp Supporter(Prayojak):</label
+          >
+          <input
+            type="text"
+            id="reference"
+            name="reference"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="remarks" class="block font-bold mb-1">Remarks:</label>
+          <textarea
+            id="remarks"
+            name="remarks"
+            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          ></textarea>
+        </div>
+        <!-- Buttons -->
+        <div class="flex justify-between">
+          <input
+            type="submit"
+            id="submit"
+            value="Submit"
+            class="bg-red-600 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-red-700"
+          />
+          <input
+            type="button"
+            value="Cancel"
+            class="bg-gray-400 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-gray-500"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+      } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBh89RtEGcYz3INTFW_kzScAM76aodLtA8",
+        authDomain: "bloodshare-94c37.firebaseapp.com",
+        databaseURL: "https://bloodshare-94c37-default-rtdb.firebaseio.com",
+        projectId: "bloodshare-94c37",
+        storageBucket: "bloodshare-94c37.appspot.com",
+        messagingSenderId: "282338631910",
+        appId: "1:282338631910:web:b797c8905c60870b7d5b27",
+        measurementId: "G-CCW4K9CET6",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      // Reference to the registration form
+      const registrationForm = document.getElementById("registration-form");
+
+      // Event listener for form submission
+      registrationForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form values
+        const organizerName = document
+          .getElementById("organizer_name")
+          .value.trim();
+        const organizationName = document
+          .getElementById("organization_name")
+          .value.trim();
+        const organizerMobile = document
+          .getElementById("organizer_mobile")
+          .value.trim();
+        const organizerEmail = document
+          .getElementById("organizer_email")
+          .value.trim();
+        const coOrganizerName = document
+          .getElementById("co_organizer_name")
+          .value.trim();
+        const coOrganizerMobile = document
+          .getElementById("co_organizer_mobile")
+          .value.trim();
+        const campName = document.getElementById("camp_name").value.trim();
+        const campAddress = document
+          .getElementById("camp_address")
+          .value.trim();
+        const bloodBank = document.getElementById("blood_bank").value.trim();
+        const cityName = document.getElementById("city_name").value.trim();
+        const campProposeDate = document
+          .getElementById("camp_propose_date")
+          .value.trim();
+        const startTime = document.getElementById("start_time").value.trim();
+        const endTime = document.getElementById("end_time").value.trim();
+        const latitude = document.getElementById("latitude").value.trim();
+        const longitude = document.getElementById("longitude").value.trim();
+        const estimatedParticipants = document
+          .getElementById("estimated_participants")
+          .value.trim();
+        const reference = document.getElementById("reference").value.trim();
+        const remarks = document.getElementById("remarks").value.trim();
+
+        // Check if all fields are filled
+        if (
+          organizerName &&
+          organizationName &&
+          organizerMobile &&
+          organizerEmail &&
+          campAddress &&
+          bloodBank &&
+          cityName &&
+          campProposeDate &&
+          startTime &&
+          endTime &&
+          estimatedParticipants
+        ) {
+          // Push data to Firebase
+          push(ref(db, "CampRegistrations"), {
+            OrganizerName: organizerName,
+            OrganizationName: organizationName,
+            OrganizerMobile: organizerMobile,
+            OrganizerEmail: organizerEmail,
+            CoOrganizerName: coOrganizerName,
+            CoOrganizerMobile: coOrganizerMobile,
+            CampName: campName,
+            CampAddress: campAddress,
+            BloodBank: bloodBank,
+            CityName: cityName,
+            CampProposeDate: campProposeDate,
+            StartTime: startTime,
+            EndTime: endTime,
+            Latitude: latitude,
+            Longitude: longitude,
+            EstimatedParticipants: estimatedParticipants,
+            Reference: reference,
+            Remarks: remarks,
+          })
+            .then(() => {
+              alert("Data stored successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessful, error: " + error.message);
+            });
+        } else {
+          alert("Please fill out all required fields");
+        }
+      });
+    </script>
+  </body>
+</html>

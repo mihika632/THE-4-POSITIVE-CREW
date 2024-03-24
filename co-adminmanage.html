@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Co-Admins</title>
+    <meta name="author" content="Your Name" />
+    <meta name="description" content="Edit Co-Admins Page" />
+
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-8">Edit Co-Admins</h1>
+
+      <!-- Co-Admins List -->
+      <div class="bg-white shadow-md rounded-md p-4 mb-8">
+        <h2 class="text-xl font-bold mb-4">Co-Admins</h2>
+        <ul>
+          <!-- Sample Co-Admins -->
+          <li class="flex justify-between items-center mb-2">
+            <span>John Doe</span>
+            <button class="text-red-500 font-bold">Remove</button>
+          </li>
+          <li class="flex justify-between items-center mb-2">
+            <span>Jane Smith</span>
+            <button class="text-red-500 font-bold">Remove</button>
+          </li>
+          <!-- Add more Co-Admins dynamically -->
+        </ul>
+      </div>
+
+      <!-- Add Co-Admin Form -->
+      <div class="bg-white shadow-md rounded-md p-4">
+        <h2 class="text-xl font-bold mb-4">Add Co-Admin</h2>
+        <form id="addCoAdminForm" class="flex">
+          <input
+            type="text"
+            id="coAdminName"
+            class="w-3/4 rounded-l-md px-4 py-2"
+            placeholder="Enter Co-Admin's Name"
+          />
+          <button
+            type="submit"
+            class="w-1/4 bg-blue-500 text-white font-bold rounded-r-md px-4 py-2"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Script to handle adding co-admin functionality -->
+    <script>
+      document
+        .getElementById("addCoAdminForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var coAdminNameInput = document.getElementById("coAdminName");
+          var coAdminName = coAdminNameInput.value.trim();
+          if (coAdminName !== "") {
+            var coAdminList = document.querySelector("ul");
+            var listItem = document.createElement("li");
+            listItem.classList.add(
+              "flex",
+              "justify-between",
+              "items-center",
+              "mb-2"
+            );
+            listItem.innerHTML =
+              "<span>" +
+              coAdminName +
+              '</span><button class="text-red-500 font-bold">Remove</button>';
+            coAdminList.appendChild(listItem);
+            coAdminNameInput.value = "";
+          }
+        });
+
+      // Add event listener to dynamically added Remove buttons
+      document.querySelector("ul").addEventListener("click", function (event) {
+        if (event.target && event.target.tagName === "BUTTON") {
+          event.target.parentNode.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
