@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "282338631910",
+    "firebase_url": "https://bloodshare-94c37-default-rtdb.firebaseio.com",
+    "project_id": "bloodshare-94c37",
+    "storage_bucket": "bloodshare-94c37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282338631910:android:0dada5c3e91125b17d5b27",
+        "android_client_info": {
+          "package_name": "com.example.bloodshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282338631910-i9ofot00pnb3kt69fecalb8uegporfoo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChGK0uNqWR4F4xCmOuqiQTbIVz-hzb0vY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282338631910-i9ofot00pnb3kt69fecalb8uegporfoo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "282338631910-n6btrf8naq7a162i4jabqsma07kg2tok.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bloodshare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
